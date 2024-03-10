@@ -1,5 +1,9 @@
 # HateMiner
 
+
+https://github.com/tuhinaww/HateMiner/assets/119059108/8b7754f3-9a72-42a4-b77f-8afa6ad19f6e
+
+
 ## Empowering Women and Fostering Inclusivity in the Workplace
 
 ### Inspiration
