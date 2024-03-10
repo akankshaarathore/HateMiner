@@ -30,8 +30,3 @@ The importance of data integrity and model accuracy when tackling sensitive issu
 - Enhancing model capabilities for improved accuracy.
 - Expanding the dataset.
 - Incorporating advanced features and analytics tools.
-
-### Installation
-1. Clone the repository: `git clone https://github.com/tuhinaww/HateMiner.git`
-2. Install dependencies: `npm install`
-3. Start the server: `npm start`
