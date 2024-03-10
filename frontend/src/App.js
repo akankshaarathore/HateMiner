@@ -5,8 +5,8 @@ import {
   Routes,
   Route,
   Link
-} from 'react-router-dom'
-import Navbar from "./components/Navbar"
+} from 'react-router-dom';
+import Navbar from "./components/navbar.js";
 
 function App() {
     const [data, setdata] = useState({
@@ -18,8 +18,14 @@ function App() {
  
 
     useEffect(() => {
-        fetch("/data").then((res) =>
-            res.json().then((data) => {
+        fetch("http://127.0.0.1:5000/data")
+            .then((res) => {
+                if (!res.ok) {
+                    throw new Error("Network response was not ok");
+                }
+                return res.json();
+            })
+            .then((data) => {
                 setdata({
                     name: data.Name,
                     age: data.Age,
@@ -27,7 +33,9 @@ function App() {
                     programming: data.programming,
                 });
             })
-        );
+            .catch((error) => {
+                console.error("Error fetching data:", error);
+            });
     }, []);
  
     return (
