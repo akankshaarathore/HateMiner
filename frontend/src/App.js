@@ -1,56 +1,25 @@
-import React, { useState, useEffect } from "react";
-import "./App.css";
+import Home from "./pages/Home"
+import Demo from "./pages/Demo"
+import Profiles from "./pages/Profiles"
+import Navbar from "./components/Navbar"
 import {
   BrowserRouter as Router,
   Routes,
   Route,
   Link
-} from 'react-router-dom';
-import Navbar from "./components/navbar";
-import About from "./pages/navigate";
-import Profiles from "./pages/Profiles";
+} from 'react-router-dom'
 
 function App() {
-    const [data, setdata] = useState({
-        name: "",
-        age: 0,
-        date: "",
-        programming: "",
-    });
- 
-
-    useEffect(() => {
-        fetch("http://127.0.0.1:5000/data")
-            .then((res) => {
-                if (!res.ok) {
-                    throw new Error("Network response was not ok");
-                }
-                return res.json();
-            })
-            .then((data) => {
-                setdata({
-                    name: data.Name,
-                    age: data.Age,
-                    date: data.Date,
-                    programming: data.programming,
-                });
-            })
-            .catch((error) => {
-                console.error("Error fetching data:", error);
-            });
-    }, []);
- 
-    return (
-        <div className="App">
-            <Router>
-              <Navbar/>
-                <Routes>
-                    <Route path="/navigate" element={<About/>} />
-                    <Route path="/profiles" element={<Profiles/>} />
-                </Routes>
-            </Router>
-        </div>
-    );
+  return (
+    <>
+    <Navbar/>
+    <Routes>
+        <Route index element={<Home/>}/>
+        <Route path="/demo" element={<Demo/>}/>
+        <Route path="/profiles" element={<Profiles/>}/>
+    </Routes>
+    </>
+  )
 }
- 
-export default App;
+
+export default App

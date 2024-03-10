@@ -22,7 +22,7 @@ function ToxicityDetection() {
                 if(response.data.toxicity.toxicity_score > 0.5) {
                     console.log("Toxic");
                 } else {
-                    console.log("Kind");
+                    console.log("Benign");
                 }
             })
             .catch(error => {

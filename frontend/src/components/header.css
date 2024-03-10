@@ -1,0 +1,40 @@
+.intro {
+  background-color: #c24fdc;
+  width: 120vw;
+  height: 160vh;
+  display: grid;
+  place-items:center;
+  
+
+}
+
+.workplace-text {
+  color:white;
+  font-family: TuesdayNight;
+  font-size: 70px;
+  
+}
+.top-header {
+  margin-top: 160px;
+  width: 892px;
+  margin-right: 100px;
+  margin-bottom: 100px;
+  align-items: center;
+  
+}
+
+.pitch {
+  color:white;
+  font-size: 50px;
+  font-family: 'Cocogoose';
+  line-height: 1.7;
+  margin-right: 120px;
+
+}
+
+.scroller-photo {
+  width: 405px;
+  height: 457.5px;
+  object-fit: cover;
+  border-radius: 30px;
+}
