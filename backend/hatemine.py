@@ -11,7 +11,7 @@ from sklearn.svm import SVC
 from sklearn.metrics import classification_report
 import joblib
 
-data = pd.read_csv("backend/dataset/output_deduplicated.csv")
+data = pd.read_csv("./dataset/output_deduplicated.csv")
 
 stemmer = SnowballStemmer("english")
 stopword = set(stopwords.words('english'))
@@ -33,12 +33,11 @@ pipeline = Pipeline([
 
 pipeline.fit(X_train, y_train)
 y_pred = pipeline.predict(X_test)
-
-input_message = input("Enter the message to classify: ")
-input_message_processed = preprocess_text(input_message)
-prediction = pipeline.predict([input_message_processed])
-if prediction[False]:
-    print("The message is not misogynistic.")
-else:
-    print("The message is misogynistic.")
+def predict(input_message):
+    input_message_processed = preprocess_text(input_message)
+    prediction = pipeline.predict([input_message_processed])
+    if prediction[False]:
+        return False
+    else:
+        return True
 

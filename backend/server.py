@@ -1,11 +1,12 @@
-from flask import Flask
+from flask import Flask, request
 import datetime
- 
+from hatemine import predict
 x = datetime.datetime.now()
+from flask_cors import CORS
  
 # Initializing flask app
 app = Flask(__name__)
- 
+CORS(app)
  
 # Route for seeing a data
 @app.route('/data')
@@ -18,7 +19,18 @@ def get_time():
         "Date":x, 
         "programming":"python"
         }
- 
+
+@app.route('/predict', methods=['POST'])
+def predict_message():
+    message = "i aws hit"
+    print(message)
+
+    val = predict(message)
+
+    if val==True:
+        return "myso"
+    else:
+        return "non myso"
      
 # Running app
 if __name__ == '__main__':
