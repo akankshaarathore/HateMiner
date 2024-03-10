@@ -3,6 +3,7 @@ import datetime
 from hatemine import predict
 x = datetime.datetime.now()
 from flask_cors import CORS
+import urllib.parse
  
 # Initializing flask app
 app = Flask(__name__)
@@ -22,12 +23,13 @@ def get_time():
 
 @app.route('/predict', methods=['POST'])
 def predict_message():
-    message = "i aws hit"
+    message_encoded = request.json.get('msg')
+    message = urllib.parse.unquote(message_encoded)
     print(message)
 
     val = predict(message)
 
-    if val==True:
+    if val == True:
         return "myso"
     else:
         return "non myso"

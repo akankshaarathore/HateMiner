@@ -1,7 +1,7 @@
-import Home from "./pages/Home"
+import Home from "./pages/home"
 import Demo from "./pages/Demo"
 import Profiles from "./pages/Profiles"
-import Navbar from "./components/Navbar"
+import Navbar from "./components/navbar"
 import {
   BrowserRouter as Router,
   Routes,
