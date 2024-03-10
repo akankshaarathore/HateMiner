@@ -17,8 +17,8 @@ const Navbar = () => {
 
       <div className='buttons'>
         <ul     className='buttons-inner'>
-          <li><Link to="/navigate" className='each-button'>About Us</Link></li>
-          <li><Link to="/bot" className='each-button'>Hate Navigate</Link></li>
+          <li><Link to="/about" className='each-button'>About Us</Link></li>
+          <li><Link to="/navigate" className='each-button'>Hate Navigate</Link></li>
           <a href="https://discord.com/">
             <li className='each-button'>Discord</li></a>
         </ul>
