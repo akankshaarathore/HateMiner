@@ -34,6 +34,4 @@ pipeline = Pipeline([
 pipeline.fit(X_train, y_train)
 y_pred = pipeline.predict(X_test)
 
-print(classification_report(y_test, y_pred))
-
 joblib.dump(pipeline, 'misogyny_detection_model.pkl')
