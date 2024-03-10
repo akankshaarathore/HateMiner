@@ -34,4 +34,11 @@ pipeline = Pipeline([
 pipeline.fit(X_train, y_train)
 y_pred = pipeline.predict(X_test)
 
-joblib.dump(pipeline, 'misogyny_detection_model.pkl')
+input_message = input("Enter the message to classify: ")
+input_message_processed = preprocess_text(input_message)
+prediction = pipeline.predict([input_message_processed])
+if prediction[False]:
+    print("The message is not misogynistic.")
+else:
+    print("The message is misogynistic.")
+
