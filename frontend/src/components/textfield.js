@@ -71,7 +71,7 @@ const InputField = () => {
         <form onSubmit={handleSubmit}>
           <label>
             <input 
-              placeholder="Message Miso Bot"
+              placeholder="Message Bot"
               className='submitter'
               type="text" 
               value={name}
