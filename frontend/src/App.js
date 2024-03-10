@@ -6,7 +6,9 @@ import {
   Route,
   Link
 } from 'react-router-dom';
-import Navbar from "./components/navbar.js";
+import Navbar from "./components/Navbar";
+import About from "./pages/navigate";
+import Profiles from "./pages/Profiles";
 
 function App() {
     const [data, setdata] = useState({
@@ -42,6 +44,10 @@ function App() {
         <div className="App">
             <Router>
               <Navbar/>
+                <Routes>
+                    <Route path="/navigate" element={<About/>} />
+                    <Route path="/profiles" element={<Profiles/>} />
+                </Routes>
             </Router>
         </div>
     );

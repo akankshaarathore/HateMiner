@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import axios from 'axios'
 import './textfield.css'
 import WriteMessage from './WriteMessage.js'
+import Profile from '../pages/Profiles.js'
 
 const InputField = () => {
   const [name, setName] = useState("")

@@ -6,7 +6,7 @@ import './navigate.css'
 
 const About = () => {
   return (
-    <div className="navigate">
+    <div className="demo">
       <DemoArea/>
 
     
